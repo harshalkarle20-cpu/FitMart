@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
 import { fmt } from "../utils/formatters";
 
-const API_BASE = `${import.meta.env.VITE_API_URL}/api`;
+import { API_BASE } from "../utils/api";
 
 const SEGMENT_STYLES = {
   "high-value": "bg-stone-900 text-white",
@@ -169,8 +169,8 @@ export default function AdminCustomerDetail() {
       // Try to fetch saved profile/address for the user to include in invoice
       let profileAddrHtml = "";
       try {
-        const root = API_BASE.replace(/\/api$/, "");
-        const res = await fetch(`${root}/api/user/profile/${userId}`, { credentials: 'include' });
+        const res = await fetch(`${API_BASE}/user/profile/${userId}`, { credentials: 'include' });
+
         if (res.ok) {
           const p = await res.json();
           const addr = (p?.addresses || []).find(a => a.id === p?.defaultAddressId) || (p?.addresses || [])[0];

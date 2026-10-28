@@ -9,7 +9,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
+import { API_BASE } from "../utils/api";
 
 const fmt = (n) =>
   new Intl.NumberFormat("en-IN", {
@@ -141,7 +141,7 @@ export default function AdminDashboard() {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch(`${API_BASE}/api/dashboard?range=${range}`);
+        const res = await fetch(`${API_BASE}/dashboard?range=${range}`);
         if (!res.ok) throw new Error("Failed to fetch dashboard data");
         setData(await res.json());
       } catch (err) {

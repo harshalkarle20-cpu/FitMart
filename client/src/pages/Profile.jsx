@@ -6,7 +6,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { getAuthHeaders } from "../utils/getAuthHeaders";
 import Navbar from "../components/Navbar";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
+import { API_URL as API } from "../utils/api";
 
 function Toast({ message, onClose }) {
   useEffect(() => {

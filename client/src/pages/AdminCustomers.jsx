@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { fmt } from "../utils/formatters";
 import AdminNavbar from "../components/AdminNavbar";
 
-const API_BASE = `${import.meta.env.VITE_API_URL}/api`;
+import { API_BASE } from "../utils/api";
 
 const SEGMENT_STYLES = {
   "high-value": "bg-stone-900 text-white",

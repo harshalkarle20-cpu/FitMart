@@ -4,7 +4,7 @@ import { fmt } from "../utils/formatters";
 import { useNavigate } from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
 
-const API_BASE = `${import.meta.env.VITE_API_URL}/api`;
+import { API_BASE } from "../utils/api";
 
 const RANGE_LABELS = {
   daily: "Last 24 Hours",

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import { addExerciseToWorkout, getWorkoutByDate } from "../utils/workoutStorage";
+import { API_URL } from "../utils/api";
 
 const CATEGORIES = [
   { id: "chest", name: "Chest" },
@@ -42,7 +43,7 @@ export default function ExercisePage() {
     setImageErrors(new Set());
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000";
+      const apiUrl = API_URL;
       const response = await fetch(`${apiUrl}/api/exercises/${bodyPart}`);
 
       if (!response.ok) {

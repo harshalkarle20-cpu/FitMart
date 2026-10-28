@@ -13,7 +13,7 @@ import { useWelcomeDiscount } from "../auth/useWelcomeDiscount";
 import BMICalculator from "../components/BMICalculator";
 import CalorieCalculator from "../components/CalorieCalculator";
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:5000";
+import { API_URL as API } from "../utils/api";
 
 const CATEGORIES = [
   { name: "All", value: "all" },

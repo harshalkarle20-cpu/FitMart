@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import AdminNavbar from "../components/AdminNavbar";
 
 const LOW_STOCK_THRESHOLD = 5;
-const API_BASE = `${import.meta.env.VITE_API_URL}/api`;
+import { API_BASE } from "../utils/api";
 
 const statusConfig = (p) => {
   const isUnavailable = p.stock === null;

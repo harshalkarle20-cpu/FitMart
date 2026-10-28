@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useAuth } from '../auth/useAuth';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+import { API_URL as API } from '../utils/api';
 
 export default function ReportBugButton() {
   const { user } = useAuth();
